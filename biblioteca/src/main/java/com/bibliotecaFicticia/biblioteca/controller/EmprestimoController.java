@@ -5,10 +5,9 @@ import com.bibliotecaFicticia.biblioteca.entity.EmprestimoEntity;
 import com.bibliotecaFicticia.biblioteca.service.EmprestimoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -20,7 +19,12 @@ public class EmprestimoController {
 
     @PostMapping
     public ResponseEntity<EmprestimoEntity> criarEmprestimo(@RequestBody EmprestimoEntity emprestimo) {
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok().body(emprestimoService.salvar(emprestimo));
+    }
+
+    @GetMapping
+    public ResponseEntity<List<EmprestimoEntity>> buscarTodos(){
+        return ResponseEntity.ok().body(emprestimoService.buscarTodos());
     }
 
 }

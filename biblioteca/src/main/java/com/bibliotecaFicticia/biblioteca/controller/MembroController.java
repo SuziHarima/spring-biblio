@@ -5,10 +5,9 @@ import com.bibliotecaFicticia.biblioteca.entity.MembroEntity;
 import com.bibliotecaFicticia.biblioteca.service.MembroService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -20,7 +19,12 @@ public class MembroController {
 
     @PostMapping
     public ResponseEntity<MembroEntity> criarMembro(@RequestBody MembroEntity membro) {
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok().body(membroService.salvar(membro));
+    }
+
+    @GetMapping
+    public ResponseEntity<List<MembroEntity>> buscarTodos(){
+        return ResponseEntity.ok().body(membroService.buscarTodos());
     }
 
 }

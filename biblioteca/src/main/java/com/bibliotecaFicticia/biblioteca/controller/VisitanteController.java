@@ -5,10 +5,9 @@ import com.bibliotecaFicticia.biblioteca.entity.VisitanteEntity;
 import com.bibliotecaFicticia.biblioteca.service.VisitanteService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -20,7 +19,12 @@ public class VisitanteController {
 
     @PostMapping
     public ResponseEntity<VisitanteEntity> criarVisitante(@RequestBody VisitanteEntity visitante) {
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok().body(visitanteService.salvar(visitante));
+    }
+
+    @GetMapping
+    public ResponseEntity<List<VisitanteEntity>> buscarTodos(){
+        return ResponseEntity.ok().body(visitanteService.buscarTodos());
     }
 
 }

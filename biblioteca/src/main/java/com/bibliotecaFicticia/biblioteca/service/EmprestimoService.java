@@ -6,13 +6,19 @@ import com.bibliotecaFicticia.biblioteca.repository.EmprestimoRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class EmprestimoService {
 
     private final EmprestimoRepository emprestimoRepository;
 
-    public EmprestimoEntity salvarEmprestimo(EmprestimoEntity emprestimo) {
+    public EmprestimoEntity salvar(EmprestimoEntity emprestimo) {
         return emprestimoRepository.save(emprestimo);
+    }
+
+    public List<EmprestimoEntity> buscarTodos() {
+        return emprestimoRepository.findAll();
     }
 }

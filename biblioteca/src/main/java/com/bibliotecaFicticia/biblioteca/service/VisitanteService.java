@@ -5,13 +5,19 @@ import com.bibliotecaFicticia.biblioteca.repository.VisitanteRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class VisitanteService {
 
     private final VisitanteRepository visitanteRepository;
 
-    public VisitanteEntity salvarVisitante(VisitanteEntity visitante) {
+    public VisitanteEntity salvar(VisitanteEntity visitante) {
         return visitanteRepository.save(visitante);
+    }
+
+    public List<VisitanteEntity> buscarTodos() {
+        return visitanteRepository.findAll();
     }
 }
