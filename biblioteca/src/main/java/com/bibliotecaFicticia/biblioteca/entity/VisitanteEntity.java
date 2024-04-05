@@ -3,22 +3,20 @@ package com.bibliotecaFicticia.biblioteca.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.lang.Nullable;
 
-@Table(name = "livros")
+@Table(name = "visitantes")
 @Entity
 @Data
 @NoArgsConstructor
-public class LivrosEntity {
+public class VisitanteEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
 
     @Column(nullable = false)
-    private String titulo;
+    private String nome;
 
-    @Column(nullable = false)
-    private String autor;
-    private Integer anoPublicacao;
+
+    private String telefone;
 }

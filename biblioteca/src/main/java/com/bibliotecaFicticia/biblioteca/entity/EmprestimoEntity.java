@@ -8,15 +8,15 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-public class EmprestimosEntity {
+public class EmprestimoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
 
     @OneToMany
     @JoinColumn(name = "livro_id", nullable = false)
-    private LivrosEntity livro;
+    private LivroEntity livro;
 
     @ManyToOne
     @JoinColumn(name = "membro_id", nullable = false)

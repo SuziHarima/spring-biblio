@@ -4,19 +4,16 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Table(name = "visitantes")
+@Table(name="bibliotecarios")
 @Entity
 @Data
 @NoArgsConstructor
-public class VisitantesEntity {
+public class BibliotecarioEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
-
-    @Column(nullable = false)
+    private Long id;
     private String nome;
-
-
-    private String telefone;
+    private String email;
+    private String senha;
 }

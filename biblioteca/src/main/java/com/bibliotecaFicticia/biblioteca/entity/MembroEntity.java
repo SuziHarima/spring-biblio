@@ -8,12 +8,12 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-public class MembrosEntity {
+public class MembroEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "membro_id")
-    private Integer id;
+    private Long id;
 
     @Column(nullable = false)
     private String nome;
