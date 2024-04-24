@@ -33,4 +33,10 @@ public class VisitanteController {
         return ResponseEntity.noContent().build();
     }
 
+    @PatchMapping
+    public ResponseEntity<Void> updateEmail (@RequestParam ("nome") String nome, @RequestParam ("telefone") String telefone){
+        visitanteService.atualizaTelefone(nome, telefone);
+        return ResponseEntity.accepted().build();
+    }
+
 }

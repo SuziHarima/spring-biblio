@@ -24,4 +24,9 @@ public class MembroService {
     public void deletarPorId(Long id) {
         membroRepository.deleteById(id);
     }
+
+    public void atualizaEndereco(String nome, String endereco){
+        membroRepository.updateEndereco(nome, endereco);
+    }
+
 }

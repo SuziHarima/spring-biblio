@@ -6,6 +6,7 @@ import com.bibliotecaFicticia.biblioteca.repository.EmprestimoRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -25,4 +26,9 @@ public class EmprestimoService {
     public void deletarPorId(Long id) {
         emprestimoRepository.deleteById(id);
     }
+
+    public void atualizaDevolucao(Long id, LocalDate dataDevolucao){
+        emprestimoRepository.updateDevolucao(id, dataDevolucao);
+    }
+
 }

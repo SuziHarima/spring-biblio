@@ -24,4 +24,9 @@ public class LivroService {
     public void deletarPorId(Long id) {
         livroRepository.deleteById(id);
     }
+
+    public void atualizaAutor(String nome, String autor){
+        livroRepository.updateAutor(nome, autor);
+    }
+
 }

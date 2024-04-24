@@ -33,4 +33,10 @@ public class MembroController {
         return ResponseEntity.noContent().build();
     }
 
+    @PatchMapping
+    public ResponseEntity<Void> updateEmail (@RequestParam ("nome") String nome, @RequestParam ("endereco") String endereco){
+        membroService.atualizaEndereco(nome, endereco);
+        return ResponseEntity.accepted().build();
+    }
+
 }

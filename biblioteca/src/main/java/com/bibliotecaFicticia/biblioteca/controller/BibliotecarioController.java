@@ -33,4 +33,10 @@ public class BibliotecarioController {
         return ResponseEntity.noContent().build();
     }
 
+    @PatchMapping
+    public ResponseEntity<Void> updateEmail (@RequestParam ("nome") String nome, @RequestParam ("email") String email){
+        bibliotecarioService.atualizaEmail(nome, email);
+        return ResponseEntity.accepted().build();
+    }
+
 }

@@ -24,4 +24,9 @@ public class VisitanteService {
     public void deletarPorId(Long id) {
         visitanteRepository.deleteById(id);
     }
+
+    public void atualizaTelefone(String nome, String telefone){
+        visitanteRepository.updateTelefone(nome, telefone);
+    }
+
 }

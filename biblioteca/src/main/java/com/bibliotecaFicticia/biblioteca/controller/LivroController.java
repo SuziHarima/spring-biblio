@@ -33,4 +33,10 @@ public class LivroController {
         return ResponseEntity.noContent().build();
     }
 
+    @PatchMapping
+    public ResponseEntity<Void> updateAutor (@RequestParam ("nome") String nome, @RequestParam ("autor") String autor){
+        livroService.atualizaAutor(nome, autor);
+        return ResponseEntity.accepted().build();
+    }
+
 }

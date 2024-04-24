@@ -26,4 +26,8 @@ public class BibliotecarioService {
         bibliotecarioRepository.deleteById(id);
     }
 
+    public void atualizaEmail(String nome, String email){
+        bibliotecarioRepository.updateEmail(nome, email);
+    }
+
 }

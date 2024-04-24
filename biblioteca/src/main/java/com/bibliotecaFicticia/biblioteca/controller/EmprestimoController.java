@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -31,6 +32,12 @@ public class EmprestimoController {
     public ResponseEntity<Void> deletaPorId(@PathVariable Long id) {
         emprestimoService.deletarPorId(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @PatchMapping
+    public ResponseEntity<Void> updateDevolucao (@RequestParam ("id") Long id, @RequestParam ("dataDevolucao") LocalDate dataDevolucao){
+        emprestimoService.atualizaDevolucao(id, dataDevolucao);
+        return ResponseEntity.accepted().build();
     }
 
 }
