@@ -27,4 +27,10 @@ public class BibliotecarioController {
         return ResponseEntity.ok().body(bibliotecarioService.buscarTodos());
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletaPorId(@PathVariable Long id) {
+        bibliotecarioService.deletarPorId(id);
+        return ResponseEntity.noContent().build();
+    }
+
 }

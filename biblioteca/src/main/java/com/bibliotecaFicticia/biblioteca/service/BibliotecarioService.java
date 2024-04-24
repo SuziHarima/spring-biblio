@@ -22,4 +22,8 @@ public class BibliotecarioService {
         return bibliotecarioRepository.findAll();
     }
 
+    public void deletarPorId(Long id) {
+        bibliotecarioRepository.deleteById(id);
+    }
+
 }

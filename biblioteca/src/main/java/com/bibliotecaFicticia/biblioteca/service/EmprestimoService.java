@@ -21,4 +21,8 @@ public class EmprestimoService {
     public List<EmprestimoEntity> buscarTodos() {
         return emprestimoRepository.findAll();
     }
+
+    public void deletarPorId(Long id) {
+        emprestimoRepository.deleteById(id);
+    }
 }

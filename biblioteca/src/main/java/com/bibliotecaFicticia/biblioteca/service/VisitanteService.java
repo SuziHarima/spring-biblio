@@ -20,4 +20,8 @@ public class VisitanteService {
     public List<VisitanteEntity> buscarTodos() {
         return visitanteRepository.findAll();
     }
+
+    public void deletarPorId(Long id) {
+        visitanteRepository.deleteById(id);
+    }
 }

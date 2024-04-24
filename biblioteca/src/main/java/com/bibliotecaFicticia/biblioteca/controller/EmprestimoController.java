@@ -27,4 +27,10 @@ public class EmprestimoController {
         return ResponseEntity.ok().body(emprestimoService.buscarTodos());
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletaPorId(@PathVariable Long id) {
+        emprestimoService.deletarPorId(id);
+        return ResponseEntity.noContent().build();
+    }
+
 }

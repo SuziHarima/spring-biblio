@@ -27,4 +27,10 @@ public class MembroController {
         return ResponseEntity.ok().body(membroService.buscarTodos());
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletaPorId(@PathVariable Long id) {
+        membroService.deletarPorId(id);
+        return ResponseEntity.noContent().build();
+    }
+
 }

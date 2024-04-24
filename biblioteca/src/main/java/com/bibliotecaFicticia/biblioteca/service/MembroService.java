@@ -20,4 +20,8 @@ public class MembroService {
     public List<MembroEntity> buscarTodos() {
         return membroRepository.findAll();
     }
+
+    public void deletarPorId(Long id) {
+        membroRepository.deleteById(id);
+    }
 }

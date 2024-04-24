@@ -27,4 +27,10 @@ public class VisitanteController {
         return ResponseEntity.ok().body(visitanteService.buscarTodos());
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletaPorId(@PathVariable Long id) {
+        visitanteService.deletarPorId(id);
+        return ResponseEntity.noContent().build();
+    }
+
 }

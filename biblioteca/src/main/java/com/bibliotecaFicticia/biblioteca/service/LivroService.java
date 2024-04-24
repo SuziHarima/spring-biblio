@@ -20,4 +20,8 @@ public class LivroService {
     public List<LivroEntity> buscarTodos() {
         return livroRepository.findAll();
     }
+
+    public void deletarPorId(Long id) {
+        livroRepository.deleteById(id);
+    }
 }
