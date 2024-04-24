@@ -1,10 +1,13 @@
 package com.bibliotecaFicticia.biblioteca.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Table(name="emprestimos")
+import java.time.LocalDate;
+
+@Table(name="emprestimo")
 @Entity
 @Data
 @NoArgsConstructor
@@ -22,7 +25,10 @@ public class EmprestimoEntity {
     @JoinColumn(name = "membro_id", nullable = false)
     private Integer membro;
 
-    private Integer dataEmprestimo;
-    private Integer dataDevolucao;
+    @JsonFormat(pattern = "dd/MM/yy")
+    private LocalDate dataEmprestimo;
+
+    @JsonFormat(pattern = "dd/MM/yy")
+    private LocalDate dataDevolucao;
 
 }

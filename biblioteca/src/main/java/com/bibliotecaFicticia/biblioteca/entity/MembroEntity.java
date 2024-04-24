@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Table(name = "membros")
+@Table(name = "membro")
 @Entity
 @Data
 @NoArgsConstructor

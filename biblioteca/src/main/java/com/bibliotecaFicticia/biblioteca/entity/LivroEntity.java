@@ -1,10 +1,13 @@
 package com.bibliotecaFicticia.biblioteca.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Table(name = "livros")
+import java.time.LocalDate;
+
+@Table(name = "livro")
 @Entity
 @Data
 @NoArgsConstructor
@@ -19,5 +22,7 @@ public class LivroEntity {
 
     @Column(nullable = false)
     private String autor;
-    private Integer anoPublicacao;
+
+    @JsonFormat(pattern = "dd/MM/yy")
+    private LocalDate anoPublicacao;
 }
