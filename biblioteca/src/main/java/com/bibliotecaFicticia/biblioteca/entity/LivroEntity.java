@@ -23,6 +23,5 @@ public class LivroEntity {
     @Column(nullable = false)
     private String autor;
 
-    @JsonFormat(pattern = "dd/MM/yy")
-    private LocalDate anoPublicacao;
+    private Integer anoPublicacao;
 }
